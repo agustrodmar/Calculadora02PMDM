@@ -5,6 +5,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Clase MainActivity que hereda de AppCompatActivity.
+ * Esta clase se encarga de manejar la interfaz de usuario de la aplicación.
+ *
+ * @property calculo Instancia de la clase Calculo que se encarga de realizar los cálculos.
+ * @property txtResultado TextView que muestra el resultado de los cálculos.
+ */
 @Suppress("SpellCheckingInspection")
 class MainActivity : AppCompatActivity() {
     private lateinit var calculo: Calculo
@@ -24,7 +31,11 @@ class MainActivity : AppCompatActivity() {
         R.id.botonMultiplicacion, R.id.botonDivision
     )
 
-    // Método onCreate que se ejecuta cuando se crea la actividad
+    /**
+     * Método onCreate que se ejecuta cuando se crea la actividad
+     *
+     * @param savedInstanceState Bundle que contiene el estado guardado de la actividad.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -69,6 +80,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        /**
+         * Botón CE (Clear Entry) para resetear los valores en la calculadora y en el TextView del resultado.
+         */
         val botonCE = findViewById<Button>(R.id.botonCE)
         botonCE.setOnClickListener {
             calculo.resetear()
@@ -76,3 +90,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
