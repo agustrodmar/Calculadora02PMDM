@@ -5,6 +5,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+@Suppress("SpellCheckingInspection")
 class MainActivity : AppCompatActivity() {
     private lateinit var calculo: Calculo
     private lateinit var txtResultado: TextView
@@ -54,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         /**
-         * Trabajo con el botón igual, llamo a la función igual,
+         * Trabajo con el botón igual, llamo a la función igual. Añado un condicional que me permite discriminar
+         * el decimal del número si este es "0".
          */
         val botonIgual = findViewById<Button>(R.id.botonIgual)
         botonIgual.setOnClickListener {
@@ -62,16 +64,15 @@ class MainActivity : AppCompatActivity() {
             // Compruebo si el decimal se puede descartar para convertirlo a entero y que no se muestre el 0
             if (calculo.resultado % 1 == 0.0) {
                 txtResultado.text = calculo.resultado.toInt().toString()
-            } else { // Si el número no tiene resto "0" respeto el float y lo convierto a string
+            } else { // Si el número no tiene resto "0", respeto el float y lo convierto a string
                 txtResultado.text = calculo.resultado.toString()
             }
+        }
 
-            val botonCE = findViewById<Button>(R.id.botonCE)
-            botonCE.setOnClickListener {
-                calculo.resetear()
-                txtResultado.text = ""
-            }
+        val botonCE = findViewById<Button>(R.id.botonCE)
+        botonCE.setOnClickListener {
+            calculo.resetear()
+            txtResultado.text = ""
         }
     }
 }
-
