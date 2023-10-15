@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Layout principal de la aplicación -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +9,7 @@
     android:background="@color/window_background"
     tools:context=".MainActivity">
 
+    <!-- Layout para mostrar el resultado de la operación -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -17,7 +19,7 @@
         android:background="@color/io_background"
         android:orientation="vertical">
 
-
+        <!-- TextView para mostrar el resultado -->
         <TextView
             android:id="@+id/textViewResultado"
             android:layout_width="match_parent"
@@ -30,31 +32,39 @@
 
     </LinearLayout>
 
+    <!-- Layout para los botones de la calculadora -->
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="*">
 
+        <!-- Fila de botones -->
         <TableRow>
 
+            <!-- Botón CE (Clear Entry) para resetear los valores en la calculadora -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonCE"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
                 style="@style/Button_Style"
                 android:text="CE" />
+            <!-- Botón sin funcionalidad, simplemente decorativo -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonPMDM"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
                 style="@style/Button_Style"
                 android:text="PMDM" />
+
+            <!-- Botón sin funcionalidad, simplemente decorativo -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonAgus"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
                 style="@style/Button_Style"
                 android:text="By Agus" />
+            
+            <!-- Botón para realizar divisiones -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonDivision"
                 android:layout_width="wrap_content"
@@ -66,6 +76,7 @@
 
         <TableRow>
 
+            <!-- Botones numéricos  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/boton7"
                 android:layout_width="wrap_content"
@@ -84,6 +95,8 @@
                 android:layout_height="90dp"
                 style="@style/Button_Style"
                 android:text="9" />
+
+            <!-- Botón para realizar multiplicaciones -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonMultiplicacion"
                 android:layout_width="wrap_content"
@@ -95,6 +108,7 @@
         </TableRow>
         <TableRow>
 
+            <!-- Botones numéricos  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/boton4"
                 android:layout_width="wrap_content"
@@ -113,6 +127,8 @@
                 android:layout_height="90dp"
                 style="@style/Button_Style"
                 android:text="6" />
+
+            <!-- Botón para realizar restas -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonResta"
                 android:layout_width="wrap_content"
@@ -124,6 +140,7 @@
         </TableRow>
         <TableRow>
 
+            <!-- Botones numéricos  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/boton1"
                 android:layout_width="wrap_content"
@@ -141,7 +158,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
                 style="@style/Button_Style"
-                android:text="3" />
+                android:text="@string/txtboton3" />
+
+            <!-- Botón para realizar sumas -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonSuma"
                 android:layout_width="wrap_content"
@@ -152,6 +171,7 @@
         </TableRow>
         <TableRow>
 
+            <!-- Botones numéricos  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/boton0"
                 android:layout_width="wrap_content"
@@ -165,6 +185,8 @@
                 style="@style/Button_Style"
                 android:textSize="40dp"
                 android:text="." />
+
+            <!-- Botón para igualar "=" -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonIgual"
                 android:layout_width="0dp"
