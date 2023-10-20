@@ -63,7 +63,7 @@
                 android:layout_height="90dp"
                 style="@style/Button_Style"
                 android:text="By Agus" />
-            
+
             <!-- Botón para realizar divisiones -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonDivision"
@@ -167,10 +167,8 @@
                 android:layout_height="90dp"
                 style="@style/Button_Style"
                 android:text="+" />
-
         </TableRow>
         <TableRow>
-
             <!-- Botones numéricos  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/boton0"
@@ -185,7 +183,6 @@
                 style="@style/Button_Style"
                 android:textSize="40dp"
                 android:text="." />
-
             <!-- Botón para igualar "=" -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botonIgual"
@@ -196,7 +193,6 @@
                 android:background="@color/green"
                 android:textSize="40dp"
                 android:text="=" />
-
         </TableRow>
     </TableLayout>
 
