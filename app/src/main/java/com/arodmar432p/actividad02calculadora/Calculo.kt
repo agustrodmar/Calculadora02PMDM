@@ -3,16 +3,6 @@ package com.arodmar432p.actividad02calculadora
 import android.content.Context
 import android.widget.Toast
 
-/**
- * Clase Calculo que se encarga de realizar los cálculos para una calculadora.
- *
- * @property context Contexto de la aplicación.
- * @property num1 Primer número en la operación.
- * @property num2 Segundo número en la operación.
- * @property operacion Operación a realizar.
- * @property resultado Resultado de la operación.
- * @property fase Fase en la que está la calculadora (de 0 a 3).
- */
 class Calculo(private val context: Context) {
     var num1: String = ""
     var num2: String = ""
@@ -21,46 +11,34 @@ class Calculo(private val context: Context) {
     var fase: Int = 0 // Controla la fase en la que está mi calculadora (de 0 a 3).
 
     /**
-     * Función para sumar num1 y num2.
+     * Los siguientes funciones se encargan de crear la lógica operacional de la calculadora.
      */
+
     fun sumar() {
         resultado = num1.toDouble() + num2.toDouble()
     }
 
-    /**
-     * Función para restar num1 y num2.
-     */
     fun restar() {
         resultado = num1.toDouble() - num2.toDouble()
     }
 
-    /**
-     * Función para multiplicar num1 y num2.
-     */
     fun multiplicar() {
         resultado = num1.toDouble() * num2.toDouble()
     }
 
-    /**
-     * Función para dividir num1 y num2.
-     */
     fun dividir() {
         resultado = num1.toDouble() / num2.toDouble()
     }
 
-    /**
-     * Función para mostrar un mensaje Toast.
-     *
-     * @param mensaje Mensaje a mostrar.
-     */
     fun mostrarToast(mensaje: String) {
         Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show()
     }
 
     /**
-     * Función para calcular el resultado de la operación. 
-     * Maneja la situación en la que se dispara el Toast. 
-     * Equipara los símbolos Strings de operaciones a los métodos de sumar, restar, multiplicar y dividir. 
+     * La función calcular maneja la situación en la que se dispara el Toast. Además, euipara los símbolos Strings
+     * de operaciones a los métodos de sumar, restar, multiplicar y dividir. Añado un condicional para comprobar que
+     * el decimal sea 0, si es 0, convierto el número a entero antes de convertirlo a String. Por otra parte, al haberse
+     * pulsado el operador, la calculadora pasa a fase 3 (Inserte num2).
      */
     fun calcular() {
         if (num1.isEmpty() || num2.isEmpty() || operacion.isEmpty()) { // Llamo al toast si pulso igual y no hay nada.
@@ -85,9 +63,7 @@ class Calculo(private val context: Context) {
     }
 
     /**
-     * Función para manejar el número pulsado en la calculadora.
-     *
-     * @param num Número pulsado.
+     * Si calculadora está en fase 0, 2, 3, lleva a cabo las siguientes tareas.
      */
     fun setNumClicked(num: String) {
         if (fase == 0) {
@@ -102,9 +78,8 @@ class Calculo(private val context: Context) {
     }
 
     /**
-     * Función para manejar la operación pulsada en la calculadora.
-     *
-     * @param oper Operación pulsada.
+     * Comprueba que num1 no esté vacio, Si es así, la calculadora pasa
+     * a fase2, espera a que inserte el botón de operación "/" "-" "x" "+"
      */
     fun setOperaciones(oper: String) {
         if (num1.isNotEmpty()) {
@@ -114,7 +89,8 @@ class Calculo(private val context: Context) {
     }
 
     /**
-     * Función para resetear los valores de la calculadora. 
+     * Todas las variables quedan vacias cuando se llama a esta función. Calculadora pasa a fase 0,
+     * (espera a num1). Llamo a este método cuando quiero resetear.
      */
     fun resetear() {
         num1 = ""
